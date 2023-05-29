@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:alpha="0.9">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tooltip_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <FrameLayout
+            android:id="@+id/tooltip_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/iv_arrow_top">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/tooltipbackground"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="9dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="8dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_messages"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btn_close"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_message_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Получи бонус 10 ГБ!"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_message_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="При пополнении баланса на 120 с "
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toStartOf="@id/btn_close"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_message_title" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btn_close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:padding="2dp"
+                        android:src="@drawable/close_bottom_sheet__1_"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintStart_toEndOf="@id/ll_messages"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/iv_arrow_top"
+            android:layout_width="20dp"
+            android:layout_height="8dp"
+            android:src="@drawable/ic_tip_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_arrow_bottom"
+            android:layout_width="20dp"
+            android:layout_height="8dp"
+            android:src="@drawable/ic_tip_down"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tooltip_content" />
+
+        <ImageView
+            android:id="@+id/iv_arrow_left"
+            android:layout_width="8dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_tip_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tooltip_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_arrow_right"
+            android:layout_width="8dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_tip_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tooltip_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

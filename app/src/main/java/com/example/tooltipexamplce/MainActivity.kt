@@ -2,15 +2,10 @@ package com.example.tooltipexamplce
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.widget.PopupWindow
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tooltipexamplce.databinding.ActivityMainBinding
-import com.skydoves.balloon.ArrowOrientation
-import com.skydoves.balloon.ArrowPositionRules
-import com.skydoves.balloon.Balloon
-import com.skydoves.balloon.BalloonAnimation
-import com.skydoves.balloon.createBalloon
+import com.skydoves.balloon.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -49,5 +44,16 @@ class MainActivity : AppCompatActivity() {
             customTooltip.show(it, TooltipOrientation.LEFT)
         }
 
+
+
+        binding.btnTopCenter.setOnClickListener {
+            if (balloon.isShowing) {
+                balloon.dismiss()
+            } else {
+                balloon.showAlignTop(it)
+            }
+        }
     }
+
+    private val balloon by balloon<BalloonFactory>()
 }

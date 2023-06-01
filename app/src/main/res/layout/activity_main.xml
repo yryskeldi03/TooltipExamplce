@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_32dp"
         android:text="top_center"
+        android:backgroundTint="@color/pink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_bottom_center" />
